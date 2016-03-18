@@ -1,4 +1,4 @@
-# DEFCON
+# Let's Pair Program
 
 An pair-programming scheduling app for [Firehose Project](http://thefirehoseproject.com) students.
 

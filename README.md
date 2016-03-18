@@ -7,3 +7,5 @@ An pair-programming scheduling app for [Firehose Project](http://thefirehoseproj
 
 * Ken Mazaika
 * Robert Sapunarich
+
+https://codeship.com/projects/4e7b2d80-cf85-0133-c208-7ebf8e5f4104/status?branch=master

@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'rake', '11.1.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
 # Use postgresql as the database for Active Record
@@ -45,8 +44,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'rspec-rails', '~> 3.0'
-  gem "factory_girl_rails", "~> 4.0"
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

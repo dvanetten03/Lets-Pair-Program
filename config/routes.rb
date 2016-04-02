@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root "posts#index"
 
   resources :categories, only: [:new, :create] do
-    resources :sections, only: [:new, :Create]
+    resources :sections, only: [:new, :create]
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

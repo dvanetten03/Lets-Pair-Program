@@ -40,7 +40,6 @@ RSpec.describe CategoriesController, type: :controller do
       category = Category.last
       expect(category.name).to eq("News")
       expect(category.description).to eq("A place for news")
-      expect(category.user).to eq(user)
     end
 
     it "should not allow a blank name" do
@@ -54,7 +53,7 @@ RSpec.describe CategoriesController, type: :controller do
       category_pre_count = Category.count
       post :create, category: {name: '', description: "A place for news"}
       expect(response).to have_http_status(:unprocessable_entity)
-      expect(category_count).to eq Category.count
+      expect(category_pre_count).to eq Category.count
     end
   end
 end

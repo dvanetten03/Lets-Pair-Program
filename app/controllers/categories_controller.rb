@@ -1,10 +1,14 @@
 class CategoriesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create]
+  before_action :authenticate_user!, only: [:new, :create,:index]
+ 
 
   def new
     @category = Category.new
   end
-
+  
+  def index
+  end
+    
   def create
     @category = Category.create(category_params)
     

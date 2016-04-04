@@ -28,6 +28,7 @@ ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
   # Test helpers for Devise
+  config.include FactoryGirl::Syntax::Methods
   config.include Devise::TestHelpers, type: :controller
   config.include Devise::TestHelpers, type: :view
 

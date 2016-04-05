@@ -10,11 +10,7 @@ RSpec.describe SectionsController, type: :controller do
 
     it "should successfully show the new form" do
       test_category = Category.create(name: "test", description: "test")
-      user = User.create(
-        email:                 'fakeuser@gmail.com',
-        password:              'secretPassword',
-        password_confirmation: 'secretPassword'
-      )
+      user = FactoryGirl.create(:user)
       sign_in user
 
       get :new, :category_id => test_category
@@ -31,11 +27,7 @@ RSpec.describe SectionsController, type: :controller do
 
     it "should successfully create a section in the database" do
       test_category = Category.create(name: "test", description: "test")
-      user = User.create(
-        email:                 'fakeuser@gmail.com',
-        password:              'secretPassword',
-        password_confirmation: 'secretPassword'
-      )
+      user = FactoryGirl.create(:user)
       sign_in user
       
       post :create, :category_id => test_category, section: {name: 'Intros', description: "A place for intros"}
@@ -50,11 +42,7 @@ RSpec.describe SectionsController, type: :controller do
     it "should not allow a blank name" do
       test_category = Category.create(name: "test", description: "test")
 
-      user = User.create(
-        email:                 'fakeuser@gmail.com',
-        password:              'secretPassword',
-        password_confirmation: 'secretPassword'
-      )
+      user = FactoryGirl.create(:user)
       sign_in user
 
       section_pre_count = Section.count

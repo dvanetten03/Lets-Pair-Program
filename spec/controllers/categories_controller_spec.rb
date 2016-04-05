@@ -8,11 +8,7 @@ RSpec.describe CategoriesController, type: :controller do
     end
 
     it "should successfully show the new form" do
-      user = User.create(
-        email:                 'fakeuser@gmail.com',
-        password:              'secretPassword',
-        password_confirmation: 'secretPassword'
-      )
+      user = FactoryGirl.create(:user)
       sign_in user
 
       get :new
@@ -27,11 +23,7 @@ RSpec.describe CategoriesController, type: :controller do
     end
 
     it "should successfully create a category in the database" do
-      user = User.create(
-        email:                 'fakeuser@gmail.com',
-        password:              'secretPassword',
-        password_confirmation: 'secretPassword'
-      )
+      user = FactoryGirl.create(:user)
       sign_in user
       
       post :create, category: {name: 'News', description: "A place for news"}
@@ -43,11 +35,7 @@ RSpec.describe CategoriesController, type: :controller do
     end
 
     it "should not allow a blank name" do
-      user = User.create(
-        email:                 'fakeuser@gmail.com',
-        password:              'secretPassword',
-        password_confirmation: 'secretPassword'
-      )
+      user = FactoryGirl.create(:user)
       sign_in user
 
       category_pre_count = Category.count

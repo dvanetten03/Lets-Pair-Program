@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "posts#index"
 
-  resources :categories, only: [:new, :create,:index] do
+  resources :categories, only: [:new, :create, :index,:show] do
     resources :sections, only: [:new, :create]
   end
   # The priority is based upon order of creation: first created -> highest priority.

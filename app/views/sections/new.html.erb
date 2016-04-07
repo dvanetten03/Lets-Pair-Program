@@ -1,0 +1,11 @@
+<div>
+  <h2>Add a New Section</h2>
+  <br />
+
+  <%= simple_form_for @section do |f| %>
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.submit "Add a Section" %>
+  <% end %>
+
+</div>

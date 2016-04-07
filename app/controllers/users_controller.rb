@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   end
 
   def show
+     @user = User.find(params[:id])
   end
 
   # Only users and admins can update user's profile

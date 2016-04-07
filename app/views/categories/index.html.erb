@@ -1,3 +1,41 @@
-<h1>Place Holder</h1>
+<div class="listbox col-xs-10 col-xs-offset-1">
+    <div class="row">
+<hr>
+
+<% @category.each do |category| %>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          
+          <h3><%= link_to category.name, category_path(category) %></h3>
+          <h5><%= category.description %></h5>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% category.sections.each do |section| %>
+      <tr>
+        <td>
+          <h4><%= section.name %><br><small><%= section.description %></small></h4>
+          
+          
+        </td>
+        <% end %>
+        
+     
+        </tbody>
+        
+        <% end %>
+        </table>
+</div>
+</div>
+
+
+
+
+
+
+
 
 

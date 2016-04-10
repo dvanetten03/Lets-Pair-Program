@@ -4,6 +4,10 @@
   <title>LetsPairProgram</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <!--Load Bootstrap css-->
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+  <!--load font awesome-->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -58,14 +62,16 @@
         <br/>
         <b>Terms & Conditions</b>
       </div>
-      <div class="col-xs-12 col-sm-3">
+      <div class="col-xs-12 col-sm-4 social">
         <b>Subscribe</b>
         <br/>
         <br/>
-        <%= image_tag 'face.png', class: 'social-button' %>
-        <%= image_tag 'gram.png', class: 'social-button' %>
-        <%= image_tag 'twit.png', class: 'social-button' %>
-        <%= image_tag 'Pin.png', class: 'social-button' %>
+          <ul>
+          <li><a href="https://www.facebook.com/theFirehoseProject/?fref=ts"><i class="fa fa-lg fa-facebook"></i></a></li>
+          <li><a href="https://plus.google.com/communities/114073605360096585795"><i class="fa fa-lg fa-google-plus"></i></a></li>
+          <li><a href="https://twitter.com/search?q=thefirehoseproject&src=tyah"><i class="fa fa-lg fa-twitter"></i></a></li>
+          <li><a href="https://github.com/FirehoseCommunity"><i class="fa fa-lg fa-github"></i></a></li>
+          </ul>
       </div>
     </div>
   </div>

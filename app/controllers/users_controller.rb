@@ -28,12 +28,5 @@ class UsersController < ApplicationController
       params.require(:user).permit(:section, :category, :post)
     end
 
-
-# Using informtion from http://guides.rubyonrails.org/action_controller_overview.html
-# Trying to put all the user controller info together, but I don't think we have all info in the users table and i'm not sure if this will throw an error or not.
-  def show
-    @user = User.find(params[:id])
-  end
-
 end
 

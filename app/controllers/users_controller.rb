@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     # :current_user_id. Logging in sets the session value and logging
     # out removes it.
     def current_user
-      @current_user || = session[:current_user_id] &&
+      @current_user || session[:current_user_id] &&
         User.find_by(id: session[:current_user_id])
       end
     end
@@ -39,11 +39,8 @@ class UsersController < ApplicationController
       end
     end
 
-end
-
 # Using informtion from http://guides.rubyonrails.org/action_controller_overview.html
 # Trying to put all the user controller info together, but I don't think we have all info in the users table and i'm not sure if this will throw an error or not.
-=======
   def show
     @user = User.find(params[:id])
   end

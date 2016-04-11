@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root "posts#index"
-  get 'about' => 'posts#about'
-  get 'contacts' => 'posts#contacts'
-  get 'press' => 'posts#press'
-  get 'terms' => 'posts#terms'
+  root "static_pages#index"
+  get 'about' => 'static_pages#about'
+  get 'contacts' => 'static_pages#contacts'
+  get 'press' => 'static_pages#press'
+  get 'terms' => 'static_pages#terms'
 
   resources :categories, only: [:new, :create, :index,:show] do
     resources :sections, only: [:new, :create]

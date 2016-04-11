@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
 
+
   describe "users#show action" do
 
     # it "should require users to be logged in to see their profile" do
@@ -17,5 +18,6 @@ RSpec.describe UsersController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
+
 
 end

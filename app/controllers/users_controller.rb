@@ -14,6 +14,7 @@ class UsersController < ApplicationController
   def update
     if current_user.update_attributes(user_params)
       redirect_to edit_user_registration_path
+    end
   end
 
   private

@@ -66,13 +66,13 @@ RSpec.describe PostsController, type: :controller do
   describe "posts#show action" do
     it "should successfully show the page" do
       post = FactoryGirl.create(:post)
-      get :show, :section_id => post.section_id, id: post
+      get :show, id: post
       expect(response).to have_http_status(:success)
     end
 
     it "should redirect to posts index if the post is not found" do
       section = FactoryGirl.create(:section)
-      get :show, :section_id => section, id: "not a real post"
+      get :show, id: "not a real post"
       expect(response).to redirect_to posts_path
     end
 

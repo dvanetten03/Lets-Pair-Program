@@ -27,12 +27,41 @@ RSpec.describe PostsController, type: :controller do
     it "should redirect to posts#index if the section is invalid" do
       user = FactoryGirl.create(:user)
       sign_in user
-      
+
       get :new, :section_id => "not a real section id"
       expect(response).to redirect_to posts_path
+    end
+  end
+
+  describe "posts#create action" do
+    it "should require users to be logged in" do
+      section = FactoryGirl.create(:section)
+      post :create, :section_id => section, post: {title: "Test Post", message: "Hello hello"}
+      expect(response).to redirect_to new_user_session_path
+    end
+
+    it "should redirect to posts#index if the section is invalid" do
+      user = FactoryGirl.create(:user)
+      sign_in user
+
+      post :create, :section_id => "not a real session id", post: {title: "Test Post", message: "Hello hello"}
+      expect(response).to redirect_to posts_path
+    end
+
+    it "should successfully create a post" do
+      section = FactoryGirl.create(:section)
+      user = FactoryGirl.create(:user)
+      sign_in user
+
+      post :create, :section_id => section, post: {title: "Test Post", message: "Hello hello"}
+
+      expect(response).to redirect_to posts_path
+
+      post = Post.last
+      expect(post.title).to eq("Test Post")
+      expect(post.message).to eq("Hello hello")
     end
 
   end
 
-  
 end

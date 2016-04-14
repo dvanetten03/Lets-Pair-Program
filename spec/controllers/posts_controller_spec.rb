@@ -14,7 +14,7 @@ RSpec.describe PostsController, type: :controller do
       sign_in user
 
       section = FactoryGirl.create(:section)
-      get :new, section_id => section.id
+      get :new, :section_id => section
       expect(response).to have_http_status(:success)
     end
 

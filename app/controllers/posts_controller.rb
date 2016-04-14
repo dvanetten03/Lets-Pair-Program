@@ -5,7 +5,13 @@ class PostsController < ApplicationController
 	end
 
   def new
-    @post = Post.new
+    @section = Section.find_by_id(params[:section_id])
+
+    if @section.nil?
+      redirect_to posts_path
+    else
+      @post = Post.new
+    end
   end
 
 end

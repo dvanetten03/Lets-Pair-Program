@@ -24,6 +24,11 @@ class PostsController < ApplicationController
       redirect_to posts_path
   end
 
+  def show
+    @section = Section.find_by_id(params[:section_id])
+    @post = @section.posts.find_by_id(params[:id])
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :message)

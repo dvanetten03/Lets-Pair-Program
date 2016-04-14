@@ -57,7 +57,7 @@ RSpec.describe PostsController, type: :controller do
 
       expect(response).to redirect_to posts_path
 
-      post = Post.last
+      post = section.posts.last
       expect(post.title).to eq("Test Post")
       expect(post.message).to eq("Hello hello")
     end

@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create]
 
 	def index
+    @categories = Category.all
 	end
 
   def new
@@ -18,7 +19,7 @@ class PostsController < ApplicationController
     @section = Section.find_by_id(params[:section_id])
 
     unless @section.nil?
-      @post = Post.create(post_params)
+      @post = @section.posts.create(post_params)
     end      
       redirect_to posts_path
   end

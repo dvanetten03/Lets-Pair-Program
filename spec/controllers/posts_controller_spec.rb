@@ -19,7 +19,8 @@ RSpec.describe PostsController, type: :controller do
     end
 
     it "should require users to be logged in" do
-      get :new
+      section = FactoryGirl.create(:section)
+      get :new, :section_id => section
       expect(response).to redirect_to new_user_session_path
     end
 

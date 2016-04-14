@@ -11,7 +11,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="Site">
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <nav class="nav navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -48,7 +48,6 @@
   <% if alert.present? %>
   <p class="alert alert-danger"><%= alert %></p>
   <% end %>
-
   <%= yield %>
 </main>
   <div id="footer">
@@ -72,16 +71,11 @@
       </div>
       <hr class="line">
       <div class="container-fluid social flex-container">
-
         <a href="https://www.facebook.com/theFirehoseProject/?fref=ts"><i class="fa fa-lg fa-facebook flex-item"></i></a>
-          <a href="https://plus.google.com/communities/114073605360096585795"><i class="fa fa-lg fa-google-plus flex-item"></i></a>
+        <a href="https://plus.google.com/communities/114073605360096585795"><i class="fa fa-lg fa-google-plus flex-item"></i></a>
         <a href="https://twitter.com/search?q=thefirehoseproject&src=tyah"><i class="fa fa-lg fa-twitter flex-item"></i></a>
         <a href="https://github.com/FirehoseCommunity"><i class="fa fa-lg fa-github flex-item"></i></a>
-
-
       </div>
   </div>
-
-
 </body>
 </html>

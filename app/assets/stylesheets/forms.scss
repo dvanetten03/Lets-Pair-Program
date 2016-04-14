@@ -29,14 +29,17 @@ input {
 }
 
 .my-btn {
-  background-color: #E9E9E9;
+  background-color: #8b9f23;
   width: 100%;
   border: none;
   font-size: 20px;
   color: white;
   margin-top: 10px;
 }
-
+input.btn.btn-info{
+  background-color: #8b9f23;
+  border: none;
+}
 .my-btn:hover{
   background-color: #125688;
 }

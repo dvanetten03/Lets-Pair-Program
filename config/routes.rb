@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     resources :sections, only: [:new, :create]
   end
 
+  resources :sections, only: [] do
+    resources :posts, only: [:new, :create]
+  end
+
   resources :users, only: :show
 
   resources :posts, only: :index

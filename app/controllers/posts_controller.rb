@@ -14,4 +14,18 @@ class PostsController < ApplicationController
     end
   end
 
+  def create
+    @section = Section.find_by_id(params[:section_id])
+
+    unless @section.nil?
+      @post = Post.create(post_params)
+    end      
+      redirect_to posts_path
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :message)
+  end
+
 end

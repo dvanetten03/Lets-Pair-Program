@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   end
 
   resources :sections, only: [] do
-    resources :posts, only: [:new, :create]
+    resources :posts, only: [:new, :create, :show]
   end
 
   resources :users, only: :show

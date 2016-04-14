@@ -65,7 +65,8 @@ RSpec.describe PostsController, type: :controller do
 
   describe "posts#show action" do
     it "should successfully show the page" do
-      get :show
+      post = FactoryGirl.create(:post)
+      get :show, :section_id => post.section_id, id: post
       expect(response).to have_http_status(:success)
     end
   end

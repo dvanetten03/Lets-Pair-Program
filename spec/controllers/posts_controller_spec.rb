@@ -61,7 +61,13 @@ RSpec.describe PostsController, type: :controller do
       expect(post.title).to eq("Test Post")
       expect(post.message).to eq("Hello hello")
     end
+  end
 
+  describe "posts#show action" do
+    it "should successfully show the page" do
+      get :show
+      expect(response).to have_http_status(:success)
+    end
   end
 
 end

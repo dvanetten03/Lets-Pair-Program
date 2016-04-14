@@ -27,6 +27,10 @@ class PostsController < ApplicationController
   def show
     @section = Section.find_by_id(params[:section_id])
     @post = @section.posts.find_by_id(params[:id])
+
+    if @post.nil?
+      redirect_to posts_path
+    end
   end
 
   private

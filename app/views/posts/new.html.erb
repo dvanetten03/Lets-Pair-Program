@@ -1,0 +1,11 @@
+<div>
+  <h2>Add a New Post</h2>
+  <br />
+
+  <%= simple_form_for @post, url: section_posts_path do |f| %>
+    <%= f.input :title %>
+    <%= f.input :message %>
+    <%= f.submit "Submit" %>
+  <% end %>
+
+</div>

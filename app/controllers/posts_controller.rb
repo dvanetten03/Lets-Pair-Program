@@ -1,16 +1,40 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+
 	def index
+    @categories = Category.all
 	end
 
-	def about
-	end
+  def new
+    @section = Section.find_by_id(params[:section_id])
 
-	def contacts
-	end
+    if @section.nil?
+      redirect_to posts_path
+    else
+      @post = Post.new
+    end
+  end
 
-	def press
-	end
+  def create
+    @section = Section.find_by_id(params[:section_id])
 
-	def terms
-	end
+    unless @section.nil?
+      @post = @section.posts.create(post_params)
+    end      
+      redirect_to posts_path
+  end
+
+  def show
+    @post = Post.find_by_id(params[:id])
+
+    if @post.nil?
+      redirect_to posts_path
+    end
+  end
+
+  private
+  def post_params
+    params.require(:post).permit(:title, :message)
+  end
+
 end

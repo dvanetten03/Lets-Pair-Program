@@ -28,7 +28,7 @@ If you're using Vagrant for your development environment start the server by run
 * to LIST custom rake tasks run "rake -T" and these rake tasks will be at the end of the list alphabetically with usage in the description
 * "rake users:admin" without params will add a default "admin@fhpletspairtest.net" with password "pairingisawesome"
 * "rake users:admin[youremail,password]" NO SPACES because rake is quirky, will add an explicit admin user with the specified email and password. There is no email format validation here, it's just for seeding the database
-* "rake users:user" without params will add a default "user@fhpdefcontest.net" with password "pairingisawesome"
+* "rake users:user" without params will add a default "user@fhpletspairtest.net" with password "pairingisawesome"
 * "rake users:user[email,password]" will add the explicit user
 * Can pass just an email to have password default to "pairingisawesome"
 * "rake users:promote[email]" to promote user to admin

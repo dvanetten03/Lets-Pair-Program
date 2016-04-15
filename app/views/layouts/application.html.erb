@@ -10,8 +10,8 @@
   <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
-<body>
-  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<body class="Site">
+  <nav class="nav navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -40,42 +40,42 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-<% if notice.present? %>
-<p class="alert alert-info"><%= notice %></p>
-<% end %>
+<main class="Site-content">
+  <% if notice.present? %>
+  <p class="alert alert-info"><%= notice %></p>
+  <% end %>
 
-<% if alert.present? %>
-<p class="alert alert-danger"><%= alert %></p>
-<% end %>
-
-<%= yield %>
-<br class="clr"/>
-<br class="clr"/>
+  <% if alert.present? %>
+  <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
+  <%= yield %>
+</main>
   <div id="footer">
-    <div class="container-fluid">
-      <div class="col-xs-12 col-sm-3">
-        <b><%= link_to 'About Us', about_path %></b>
-        <br/>
-        <b><%= link_to 'Contacts', contacts_path %></b>
-        <br/>
-        <b><%= link_to 'Press', press_path %></b>
-        <br/>
-        <b><%= link_to 'Terms & Conditions', terms_path %></b>
+    <br />
+    <div class="container-fluid flex-container">
+        <div class="flex-item">
+          <b><%= link_to 'ABOUT US', about_path %></b>
+        </div>
+        <div class="flex-item">
+          <b><%= link_to 'CONTACT', contacts_path %></b>
+        </div>
+        <div class="flex-item">
+          <b><%= link_to 'HOME', root_path %></b>
+        </div>
+        <div class="flex-item">
+          <b><%= link_to 'PRESS', press_path %></b>
+        </div>
+        <div class="flex-item">
+          <b><%= link_to 'TERMS & CONDITIONS', terms_path %></b>
+        </div>
       </div>
-      <div class="col-xs-12 col-sm-4 social">
-        <b>Subscribe</b>
-        <br/>
-        <br/>
-          <ul>
-          <li><a href="https://www.facebook.com/theFirehoseProject/?fref=ts"><i class="fa fa-lg fa-facebook"></i></a></li>
-          <li><a href="https://plus.google.com/communities/114073605360096585795"><i class="fa fa-lg fa-google-plus"></i></a></li>
-          <li><a href="https://twitter.com/search?q=thefirehoseproject&src=tyah"><i class="fa fa-lg fa-twitter"></i></a></li>
-          <li><a href="https://github.com/FirehoseCommunity"><i class="fa fa-lg fa-github"></i></a></li>
-          </ul>
+      <hr class="line">
+      <div class="container-fluid social flex-container">
+        <a href="https://www.facebook.com/theFirehoseProject/?fref=ts"><i class="fa fa-lg fa-facebook flex-item"></i></a>
+        <a href="https://plus.google.com/communities/114073605360096585795"><i class="fa fa-lg fa-google-plus flex-item"></i></a>
+        <a href="https://twitter.com/search?q=thefirehoseproject&src=tyah"><i class="fa fa-lg fa-twitter flex-item"></i></a>
+        <a href="https://github.com/FirehoseCommunity"><i class="fa fa-lg fa-github flex-item"></i></a>
       </div>
-    </div>
   </div>
-
-
 </body>
 </html>

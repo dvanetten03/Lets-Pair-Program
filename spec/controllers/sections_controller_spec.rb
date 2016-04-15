@@ -3,13 +3,13 @@ require 'rails_helper'
 RSpec.describe SectionsController, type: :controller do
   describe "sections#new action" do
     it "should require users to be logged in" do
-      test_category = Category.create(name: "test", description: "test")
+      test_category = FactoryGirl.create(:category)
       get :new, :category_id => test_category
       expect(response).to redirect_to new_user_session_path
     end
 
     it "should successfully show the new form" do
-      test_category = Category.create(name: "test", description: "test")
+      test_category = FactoryGirl.create(:category)
       user = FactoryGirl.create(:user)
       sign_in user
 
@@ -20,13 +20,13 @@ RSpec.describe SectionsController, type: :controller do
 
   describe "sections#create action" do
     it "should require users to be logged in" do
-      test_category = Category.create(name: "test", description: "test")
+      test_category = FactoryGirl.create(:category)
       post :create, :category_id => test_category, section: {name: "Intros", description: "A place for intros"}
       expect(response).to redirect_to new_user_session_path
     end
 
     it "should successfully create a section in the database" do
-      test_category = Category.create(name: "test", description: "test")
+      test_category = FactoryGirl.create(:category)
       user = FactoryGirl.create(:user)
       sign_in user
       
@@ -40,7 +40,7 @@ RSpec.describe SectionsController, type: :controller do
     end
 
     it "should not allow a blank name" do
-      test_category = Category.create(name: "test", description: "test")
+      test_category = FactoryGirl.create(:category)
 
       user = FactoryGirl.create(:user)
       sign_in user
